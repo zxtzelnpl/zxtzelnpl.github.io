@@ -2,15 +2,16 @@ const paint = async () => {
     const scene = new L7.Scene({
       id: 'map',
       map: new L7.GaodeMap({
-        style: 'light',
+        mapStyle: 'amap://styles/850255e969fdfb52d342d666e4bddade',
         center: [121.428725,31.409305],
-        zoom: 10,
-        token: '95195ef7a7dbcea9e2ff74aa6a06d1b1'
-      }),
+        // zoom: 15,
+        // zooms: [ 10, 20 ],
+        token: '95195ef7a7dbcea9e2ff74aa6a06d1b1',
+      })
     });
   
     scene.on('loaded', () => {
-      const data = window.data.slice(0,22000).filter(row => row.location).map(row => {
+      const data = window.data.filter(row => row.location).map(row => {
         const ges = row.location.split(',')
         return {
           address: row.address,
@@ -43,10 +44,10 @@ const paint = async () => {
           parser: {
             type: 'json',
             x: 'Longitude',
-            y: 'Latitude'
+            y: 'Latitude',
           }
         })
-        .shape('community', 'text')
+        .shape('text', 'text')
         .size(10)
         .color('#ffffff')
         .style({
@@ -54,7 +55,7 @@ const paint = async () => {
             textOffset: [ 0, 0 ], // 文本相对锚点的偏移量 [水平, 垂直]
             spacing: 2, // 字符间距
             padding: [ 1, 1 ], // 文本包围盒 padding [水平，垂直]，影响碰撞检测结果，避免相邻文本靠的太近
-            stroke: '#ffffff', // 描边颜色
+            stroke: '#000000', // 描边颜色
             strokeWidth: 0.3, // 描边宽度
             strokeOpacity: 1.0,
             fontFamily: 'Times New Roman',
