@@ -1,6 +1,6 @@
 const getDatas = async () => {
   try {
-    const data = await d3.csv("./data/origin.csv");
+    const data = await d3.csv("./data/data1.csv");
     window.data = data;
     let hasLocation = 0;
     let hasNoLocation = 0;
