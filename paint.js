@@ -47,7 +47,7 @@ const paint = async () => {
       .active(true)
       .color("red")
       .style({
-        opacity: 0.02,
+        opacity: 0.2,
         strokeWidth: 0,
       });
 
