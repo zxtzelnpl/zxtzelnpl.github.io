@@ -7,6 +7,7 @@ import show from "./show.js";
 import save from "./save.js";
 import getName from "./getName.js";
 import uniqName from "./uniqName.js";
+import samePoint from "./same-point.js";
 
 getDatas();
 getAggregations();
@@ -25,3 +26,4 @@ addButton("展现", show);
 addButton("绘图", paint);
 addButton("获取名字", getName);
 addButton("去重名字", uniqName);
+addButton("去重点", samePoint);
